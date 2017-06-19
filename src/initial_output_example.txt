@@ -1,0 +1,9 @@
+-----------------------------------Round 1 Step 89-----------------------------------
+- Action = 0:listen
+- State:
+[state_1:tiger-right]
+- Observation = [obs_sensor:obs-right]
+- ObsProb = 0.85
+- Reward = -1
+- Current rewards:
+  discounted / undiscounted = 22.4872 / 141
