@@ -1,0 +1,8 @@
+# this file avoid git from tracking some files
+
+# we don't track compiled files
+**/*.o
+**/*.a
+
+# we also avoid big data files such as csv
+**/*.csv
