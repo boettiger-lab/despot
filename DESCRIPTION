@@ -1,0 +1,21 @@
+Package: despot
+Type: Package
+Title: Approximate POMDP Planning Software using adaptative beliefs tree
+Version: 0.4.0
+Authors@R: c(
+    person("Carl", "Boettiger", email = "cboettig@gmail.com", role = c("cre", "aut")),
+    person("Jeroen", "Ooms", email  "jeroen.ooms@stat.ucla.edu", role = c("aut")),
+    person("Milad", "Memarzadeh", role = "aut"))
+Description: DESPOT is a C++ toolkit for approximate POMDP planning. Originally, it is
+    based on the ABT algorithm for solving discrete POMDPs.
+License: MIT + file LICENSE
+URL: https://github.com/boettiger-lab/despot
+BugReports: https://github.com/cboettig/despot/issues
+RoxygenNote: 6.0.1
+Imports: xml2
+Suggests: testthat,
+    roxygen2,
+    knitr,
+    tidyverse,
+    covr
+VignetteBuilder: knitr
