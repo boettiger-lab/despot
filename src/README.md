@@ -1,4 +1,4 @@
-# DESPOT (Original C++ code readme)
+# DESPOT (Original C++ package readme)
 
 ## Overview
 Approximate POMDP Planning Online (APPL Online) Toolkit
