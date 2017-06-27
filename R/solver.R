@@ -10,6 +10,11 @@
 #' @param stdout a filename where pomdp run data will be stored
 #' @param stderr where output to 'stderr', see \code{\link{system2}}. Use \code{FALSE}
 #' to suppress output.
+#' @param timout despot search time per move, in seconds (default 1)
+#' @param simlen despot number of steps to simulate (default 90)
+#' @param max-policy-simlen number of steps to simulate the default policy (default 90)
+#' @param depth maximum depth to simulate (default 90)
+#' @param discount discount factor for the POMDP model (default from the model file)
 #' @examples
 #' \donttest{
 #' model <- system.file("models/example.pomdp", package = "sarsop")
@@ -23,11 +28,23 @@
 #' }
 pomdpsol <- function(model, output = tempfile(), runs=2,
                      stdout = tempfile(),
-                     stderr = tempfile()){
+                     stderr = tempfile();
+                     timemout=NULL,
+                     simlen=NULL,
+                     max-policy-simlen=NULL,
+                     depth=NULL,
+                     discount=NULL){
+
   model <- normalizePath(model, mustWork = TRUE)
   args <- paste("-m", model, "--runs", runs)
 
-  # if(!is.null(timeout)) args <- paste(args, "--timeout", timeout)
+  if(!is.null(timeout)) args <- paste(args, "--timeout", timeout)
+  if(!is.null(simlen)) args <- paste(args, "--simlen", simlen)
+  if(!is.null(max-policy-simlen)) args <- paste(args, "--max-policy-simlen", max-policy-simlen)
+  if(!is.null(depth)) args <- paste(args, "--depth", depth)
+  if(!is.null(discount)) args <- paste(args, "--discount", discount)
+
+
   # args <- paste(args)
   print(stdout)
   exec_program("pomdpx", args, stdout = stdout, stderr = stderr)
