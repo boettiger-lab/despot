@@ -28,10 +28,10 @@
 #' }
 pomdpsol <- function(model, output = tempfile(), runs=2,
                      stdout = tempfile(),
-                     stderr = tempfile();
+                     stderr = tempfile(),
                      timeout=NULL,
                      simlen=NULL,
-                     max-policy-simlen=NULL,
+                     max_policy_simlen=NULL,
                      depth=NULL,
                      discount=NULL){
 
@@ -40,7 +40,7 @@ pomdpsol <- function(model, output = tempfile(), runs=2,
 
   if(!is.null(timeout)) args <- paste(args, "--timeout", timeout)
   if(!is.null(simlen)) args <- paste(args, "--simlen", simlen)
-  if(!is.null(max-policy-simlen)) args <- paste(args, "--max-policy-simlen", max-policy-simlen)
+  if(!is.null(max_policy_simlen)) args <- paste(args, "--max-policy-simlen", max_policy_simlen)
   if(!is.null(depth)) args <- paste(args, "--depth", depth)
   if(!is.null(discount)) args <- paste(args, "--discount", discount)
 
