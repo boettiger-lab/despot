@@ -34,6 +34,12 @@ pomdpsol <- function(model, output = tempfile(), runs=2,
   # parse_despot_messages(readLines(stdout))
   # Read back simulation CSV into R
   result <- read.csv(file=stdout, header=TRUE, sep=";")
+
+  #formatting the output
+  result$State = as.integer(gsub("[a-z]", "\\", result$State))
+  result$Action = as.integer(gsub("[a-z]", "\\", result$Action))
+  result$Observation = as.integer(gsub("[a-z]", "\\", result$Observation))
+
   return(result)
 }
 
