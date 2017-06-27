@@ -129,7 +129,6 @@ double LaserTag::ObsProb(OBS_TYPE obs, const State& state, int action) const {
 void LaserTag::PrintObs(const State& state, OBS_TYPE obs, ostream& out) const {
 	for (int i = 0; i < NBEAMS; i++)
 		out << GetReading(obs, i) << " ";
-	out ;
 }
 
 int LaserTag::GetReading(OBS_TYPE obs, OBS_TYPE dir) {

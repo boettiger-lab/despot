@@ -31,7 +31,6 @@ void ExecTracker::PrintLocs(ostream& out) const {
 	out << "Locs:";
 	for (map<string, int>::iterator loc = locs.begin(); loc != locs.end(); loc++)
 		out << " (" << loc->first << ", " << loc->second << ")";
-	out ;
 }
 
 } // namespace despot

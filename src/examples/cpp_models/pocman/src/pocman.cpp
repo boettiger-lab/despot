@@ -350,7 +350,7 @@ MiniPocman::MiniPocman() :
 FullPocman::FullPocman() :
 	Pocman(17, 19) {
 	// Transposed maze
-	int maze[19][17] = { 
+	int maze[19][17] = {
 		{ 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, },
 		{ 3, 0, 0, 3, 0, 0, 0, 3, 0, 3, 0, 0, 0, 3, 0, 0, 3, },
 		{ 7, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 7, },
@@ -851,7 +851,6 @@ void Pocman::PrintBelief(const Belief& belief, ostream& out) const {
 			out.precision(2);
 			out << fixed << (double) counts(x, y) / particles.size();
 		}
-		out ;
 	}
 }
 

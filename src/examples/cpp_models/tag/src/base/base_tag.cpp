@@ -780,7 +780,6 @@ void BaseTag::PrintState(const State& s, ostream& out) const {
 			else
 				out << ".";
 		}
-		out ;
 	}
 }
 

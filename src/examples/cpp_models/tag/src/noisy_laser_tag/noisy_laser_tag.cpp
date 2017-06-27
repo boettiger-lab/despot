@@ -21,7 +21,7 @@ NoisyLaserTag::NoisyLaserTag() :
 	istringstream iss(RandomMap(7, 11, 8));
 	BaseTag::Init(iss);
 	Init();
-  robot_pos_unknown_ = true; 
+  robot_pos_unknown_ = true;
 }
 
 NoisyLaserTag::NoisyLaserTag(string params_file) :
@@ -129,7 +129,6 @@ double NoisyLaserTag::ObsProb(OBS_TYPE obs, const State& state, int action) cons
 void NoisyLaserTag::PrintObs(const State& state, OBS_TYPE obs, ostream& out) const {
 	for (int i = 0; i < NBEAMS; i++)
 		out << GetReading(obs, i) << " ";
-	out ;
 }
 
 int NoisyLaserTag::GetReading(OBS_TYPE obs, OBS_TYPE dir) {

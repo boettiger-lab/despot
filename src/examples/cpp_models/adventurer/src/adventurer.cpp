@@ -346,7 +346,6 @@ void Adventurer::PrintState(const State& s, ostream& out) const {
 			}
 		}
 	}
-	out ;
 }
 
 void Adventurer::PrintBelief(const Belief& belief, ostream& out) const {
@@ -519,21 +518,21 @@ void Adventurer::PrintPOMDPX() const {
 	actions.push_back("left");
 	actions.push_back("right");
 
-	cout << "<?xml version='1.0' encoding='ISO-8859-1'?>" 
+	cout << "<?xml version='1.0' encoding='ISO-8859-1'?>"
 		<< "<pomdpx version='1.0' id='tagxmlfac' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='pomdpx.xsd'>"
-		 << "<Description>"  << "description" 
+		 << "<Description>"  << "description"
 		<< "</Description>"  << "<Discount>0.95</Discount>" ;
 
-	cout << "<Variable>" 
+	cout << "<Variable>"
 		<< "<StateVar vnamePrev=\"state_0\" vnameCurr=\"state_1\" fullyObs=\"false\"> <ValueEnum>"
 		;
 	for (int s = 0; s < NumStates(); s++)
 		cout << " s" << s;
-	cout << " st </ValueEnum> </StateVar>"  
+	cout << " st </ValueEnum> </StateVar>"
 		<< "<ObsVar vname=\"obs\"> <ValueEnum>" ;
 	for (int g = 0; g < num_goals_; g++)
 		cout << " o" << g;
-	cout << " ot"  << "</ValueEnum>"  << "</ObsVar>" 
+	cout << " ot"  << "</ValueEnum>"  << "</ObsVar>"
 		<< "<ActionVar vname=\"action\"> <ValueEnum> stay left right </ValueEnum> </ActionVar>"
 		 << "<RewardVar vname=\"reward\"/> </Variable>" ;
 

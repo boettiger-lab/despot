@@ -43,27 +43,6 @@ despot <- function(transition, observation, reward, discount,
   outfile <-  paste0(log_dir, "/", id,  ".policyx")
   stdout <-  paste0(log_dir, "/", id,  ".log")
   write_pomdpx(transition, observation, reward, discount, initial, file = infile)
-  status <- pomdpsol(infile, outfile, stdout = stdout, ...)
-
-  if(verbose){
-    message(paste("load time:", status[["load_time_sec"]],
-                  "sec, init time:", status[["init_time_sec"]],
-                  "sec, run time:", status[["run_time_sec"]],
-                  "sec, final precision:", status[["final_precision"]],
-                  "end_condition:", status[["end_condition"]]))
-  }
-
-  alpha <- read_policyx(file = outfile)
-
-  if(!is.null(log_data))
-    solutions_log(id,
-                  metafile = paste0(log_dir, "/meta.csv"),
-                  status = status,
-                  n_states = dim(observation)[[1]],
-                  n_obs = dim(observation)[[2]],
-                  n_actions = dim(observation)[[3]],
-                  discount = discount,
-                  log_data = log_data)
-
-  alpha
+  result <- pomdpsol(infile, outfile, stdout = stdout, ...)
+  return(result)
 }

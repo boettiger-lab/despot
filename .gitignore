@@ -6,3 +6,4 @@
 
 # we also avoid big data files such as csv
 **/*.csv
+.Rproj.user

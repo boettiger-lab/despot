@@ -129,7 +129,6 @@ void FVRS::PrintObs(const State& state, OBS_TYPE observation,
 	ostream& out) const {
 	for (int rock = 0; rock < num_rocks_; rock++)
 		out << CheckFlag(observation, rock);
-	out ;
 }
 
 } // namespace despot

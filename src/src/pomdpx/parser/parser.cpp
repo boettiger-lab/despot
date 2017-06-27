@@ -41,37 +41,33 @@ void Parser::Print(ostream& out) const {
 	for (int s = 0; s < curr_state_vars_.size(); s++) {
 		out << "s[" << s << "] = " << curr_state_vars_[s] ;
 	}
-	out ;
 
 	out << "Observation variables" ;
 	for (int o = 0; o < obs_vars_.size(); o++) {
 		out << "o[" << o << "] = " << obs_vars_[o] ;
 	}
-	out ;
 
 	out << "# Initial belief" ;
 	for (int s = 0; s < initial_belief_funcs_.size(); s++) {
 		out << "s[" << s << "] = " << initial_belief_funcs_[s] ;
 	}
-	out ;
+
 
 	out << "# Transition probabilities" ;
 	for (int s = 0; s < transition_funcs_.size(); s++) {
 		out << "s[" << s << "] = " << *transition_funcs_[s] ;
 	}
-	out ;
+
 
 	out << "# Observation probabilities" ;
 	for (int o = 0; o < obs_funcs_.size(); o++) {
 		out << "o[" << o << "] = " << obs_funcs_[o] ;
 	}
-	out ;
 
 	out << "# Reward functions" ;
 	for (int r = 0; r < reward_funcs_.size(); r++) {
 		out << "r[" << r << "] = " << reward_funcs_[r] ;
 	}
-	out ;
 }
 
 void Parser::Check() {
@@ -83,7 +79,6 @@ void Parser::Check() {
 		if (IsTerminalState(state))
 			PrintState(state);
 	}
-	cout ;
 
 	double rand;
 	int action;
@@ -108,7 +103,6 @@ void Parser::Check() {
 			cout << "o = " << obs << " - " << rand << " "
 				<< ObsProb(obs, state, action) ;
 			PrintObs(obs);
-			cout ;
 		}
 
 		cout << "----------------------------------" ;

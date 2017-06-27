@@ -70,9 +70,7 @@ vector<double> Floor::ComputeDistances(int source) {
 	 for (int r=0; r<num_rows_; r++) {
 	 for (int c=0; c<num_cols_; c++)
 	 cout << distMatrix[r][c] << " ";
-	 cout ;
 	 }
-	 cout ;
 	 */
 
 	for (int c = 0; c < NumCells(); c++)

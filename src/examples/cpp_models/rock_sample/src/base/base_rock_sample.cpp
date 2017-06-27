@@ -800,10 +800,8 @@ POMCPPrior* BaseRockSample::CreatePOMCPPrior(string name) const {
 }
 
 void BaseRockSample::PrintState(const State& state, ostream& out) const {
-	out ;
 	for (int x = 0; x < size_ + 2; x++)
 		out << "# ";
-	out ;
 	for (int y = size_ - 1; y >= 0; y--) {
 		out << "# ";
 		for (int x = 0; x < size_; x++) {
@@ -821,7 +819,6 @@ void BaseRockSample::PrintState(const State& state, ostream& out) const {
 	}
 	for (int x = 0; x < size_ + 2; x++)
 		out << "# ";
-	out ;
 }
 
 void BaseRockSample::PrintBelief(const Belief& belief, ostream& out) const {
@@ -841,14 +838,12 @@ void BaseRockSample::PrintBelief(const Belief& belief, ostream& out) const {
 	out << "Rock belief:";
 	for (int rock = 0; rock < num_rocks_; rock++)
 		out << " " << rock_probs[rock];
-	out ;
 
 	out << "Position belief:";
 	for (int i = 0; i < pos_probs.size(); i++) {
 		if (pos_probs[i] > 0)
 			out << " " << IndexToCoord(i) << ":" << pos_probs[i];
 	}
-	out ;
 }
 
 void BaseRockSample::PrintAction(int action, ostream& out) const {

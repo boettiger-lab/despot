@@ -235,7 +235,6 @@ void RegDemo::PrintState(const State& s, ostream& out) const {
 			}
 		}
 	}
-	out ;
 }
 
 void RegDemo::PrintBelief(const Belief& belief, ostream& out) const {

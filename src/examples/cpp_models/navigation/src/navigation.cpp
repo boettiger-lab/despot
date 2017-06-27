@@ -308,7 +308,6 @@ void Navigation::PrintState(const State& s, ostream& out) const {
 				}
 			}
 		}
-		out ;
 	}
 }
 

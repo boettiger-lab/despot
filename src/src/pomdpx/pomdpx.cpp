@@ -342,7 +342,6 @@ void POMDPX::PrintTransitions() {
 				cout << "w = " << state.weight ;
 				PrintState(*states_[state.state_id]);
 			}
-			cout ;
 		}
 	}
 }
