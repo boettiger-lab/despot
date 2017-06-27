@@ -19,17 +19,22 @@ LIBDIR = $(DESPOTHOME)/build
 # -----
 
 SOURCES = $(shell find -L $(SRCDIR) -name '*.cpp')
-BIN = pomdpx 
+BIN = pomdpx
 
 # -------
 # Targets
 # -------
 
-.PHONY: all clean 
+.PHONY: all clean
 
 all:
 	@cd $(DESPOTHOME) && make
 	$(CXX) $(LDFLAGS) $(SOURCES) -I $(INCDIR) $(LIBDIR)/*.o -o $(BIN)
 
+install:
+	$(CXX) $(LDFLAGS) $(SOURCES) -I $(INCDIR) $(LIBDIR)/*.o -o $(BIN)
+	mkdir ../../../bin
+	mv pomdpx ../../../bin/
+	
 clean:
 	rm -f $(BIN)

@@ -27,7 +27,8 @@ CPPEXAMPLE = $(addprefix examples/cpp_models/, $(shell ls examples/cpp_models))
 .PHONY: core directory library cpp_models clean
 
 core: directory $(DEPS) $(OBJS)
-
+	echo ok
+	make install -C examples/pomdpx_models 
 # Rule for creating directories needed for build
 directory:
 	@mkdir -p $(OBJDIR) $(DEPDIR)
@@ -43,7 +44,7 @@ $(DEPDIR)/%.d: %.cpp
 
 # Rules for creating object files
 $(OBJDIR)/%.o: %.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@ 
+	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Rules for creating library from the object files
 #library: $(OBJS)

@@ -3,6 +3,7 @@
 # we don't track compiled files
 **/*.o
 **/*.a
+./bin
 
 # we also avoid big data files such as csv
 **/*.csv
