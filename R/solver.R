@@ -29,7 +29,7 @@
 pomdpsol <- function(model, output = tempfile(), runs=2,
                      stdout = tempfile(),
                      stderr = tempfile();
-                     timemout=NULL,
+                     timeout=NULL,
                      simlen=NULL,
                      max-policy-simlen=NULL,
                      depth=NULL,
