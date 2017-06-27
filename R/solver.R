@@ -25,7 +25,7 @@ pomdpsol <- function(model, output = tempfile(), runs=2,
                      stdout = tempfile(),
                      stderr = tempfile()){
   model <- normalizePath(model, mustWork = TRUE)
-  args <- paste("-m", model, "--runs", runs, '-d', '10')
+  args <- paste("-m", model, "--runs", runs)
 
   # if(!is.null(timeout)) args <- paste(args, "--timeout", timeout)
   # args <- paste(args)

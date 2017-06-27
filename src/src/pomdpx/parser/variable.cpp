@@ -34,7 +34,7 @@ ostream& operator<<(ostream& os, const Variable& var) {
 	for (unsigned int i = 0; i < var.values_.size(); i++) {
 		os << " " << i << "=" << var.values_[i];
 	}
-	os ;
+	
 	return os;
 }
 

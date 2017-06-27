@@ -59,7 +59,7 @@ ostream& operator<<(ostream& os, const RandomStreams& stream) {
 		for (int j = 0; j < stream.Length(); j++) {
 			os << " " << stream.Entry(i, j);
 		}
-		os ;
+		
 	}
 	return os;
 }

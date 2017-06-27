@@ -1346,12 +1346,9 @@ bool Parser::IsInTerminalStateSet(const vector<int>& state) const {
 }
 
 void Parser::PrintState(const vector<int>& state, ostream& out) const {
-	out << "[";
 	for (int s = 0; s < state.size(); s++) {
-		out << (s == 0 ? "" : ", ") << curr_state_vars_[s].name() << ":"
-			<< curr_state_vars_[s].GetValue(state[s]);
+		out << (s == 0 ? "" : ", ") << curr_state_vars_[s].GetValue(state[s]);
 	}
-	out << "]";
 }
 
 void Parser::PrintObs(OBS_TYPE obs, ostream& out) const {
@@ -1361,16 +1358,13 @@ void Parser::PrintObs(OBS_TYPE obs, ostream& out) const {
 		obs /= obs_vars_[o].Size();
 	}
 
-	out << "[";
 	for (int o = 0; o < obs_vars_.size(); o++) {
-		out << (o == 0 ? "" : ", ") << obs_vars_[o].name() << ":"
-			<< obs_vars_[o].GetValue(obs_vec[o]);
+		out << (o == 0 ? "" : ", ") << obs_vars_[o].GetValue(obs_vec[o]);
 	}
-	out << "]";
 }
 
 void Parser::PrintAction(int action, ostream& out) const {
-	out << action << ":" << action_vars_[0].GetValue(action);
+	out << action_vars_[0].GetValue(action);
 }
 
 OBS_TYPE Parser::GetPOMDPXObservation(map<string, string>& observe) {

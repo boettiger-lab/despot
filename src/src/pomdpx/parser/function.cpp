@@ -248,8 +248,8 @@ ostream& operator<<(ostream& os, const Function& func) {
 					os << " " << func.child_->GetValue(c) << ":"
 						<< func.values_[p][c];
 			}
-			if (p != func.values_.size() - 1)
-				os ;
+			//if (p != func.values_.size() - 1)
+
 		}
 	} else {
 		for (int p = 0; p < func.map_.size(); p++) {
@@ -264,8 +264,8 @@ ostream& operator<<(ostream& os, const Function& func) {
 				os << " " << func.child_->GetValue(it->first) << ":"
 					<< it->second;
 			}
-			if (p != func.map_.size() - 1)
-				os ;
+			//if (p != func.map_.size() - 1)
+
 		}
 	}
 	return os;

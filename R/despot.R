@@ -37,7 +37,6 @@ despot <- function(transition, observation, reward, discount,
   }
 
 
-  ## Compute alpha-vectors using SARSOP pomdp algorithm from APPL
 
   infile <- paste0(log_dir, "/", id,  ".pomdpx")
   outfile <-  paste0(log_dir, "/", id,  ".policyx")

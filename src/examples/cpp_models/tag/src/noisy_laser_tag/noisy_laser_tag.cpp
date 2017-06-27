@@ -175,7 +175,7 @@ ostream& operator<<(ostream& os, const NoisyLaserTag& lasertag) {
 			os << d;
 			for (int i = 0; i < lasertag.reading_distributions_[s][d].size(); i++)
 				os << " " << lasertag.reading_distributions_[s][d][i];
-			os ;
+
 		}
 	}
 	return os;
