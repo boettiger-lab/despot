@@ -64,7 +64,7 @@ exec_program <- function(program, args, stdout, stderr = "") {
   if(identical(.Platform$OS.type, "windows")){
     program <- paste0(.Platform$r_arch, "/", program, ".exe")
   }
-  binpath <- system.file("bin", package = "despot")
+  binpath <- system.file("inst/bin", package = "despot")
   path <- normalizePath(file.path(binpath, program), mustWork = TRUE)
   res <- system2(path, args, stdout = stdout, stderr = stderr)
   if(res != 0) stop("Call to ", program, " failed with error: ", res)
