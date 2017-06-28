@@ -19,3 +19,4 @@ Suggests: testthat,
     tidyverse,
     covr
 VignetteBuilder: knitr
+SystemRequirements: GNU make
