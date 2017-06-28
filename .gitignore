@@ -3,8 +3,11 @@
 # we don't track compiled files
 **/*.o
 **/*.a
-./bin
+./inst
 
 # we also avoid big data files such as csv
 **/*.csv
 .Rproj.user
+
+#neither we track R metadata
+.R*
