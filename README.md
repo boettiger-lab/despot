@@ -1,4 +1,4 @@
-# despot
+# Despot
 ## Overview
 Wrapper for the DESPOT algorithm for solving online POMDP problems.
 
@@ -16,4 +16,6 @@ where ```TT```, ```OO``` and ```R``` are the Transition, Observation and Reward 
 
 ## Acknowledgements
 [Original Despot implementation](https://github.com/AdaCompNUS/despot) was made by the [M<sup>2</sup>AP Group](http://bigbird.comp.nus.edu.sg/m2ap/wordpress/) from the National University of Singapore
+
+
 **Currently in alpha state, package is working but can have errors**
