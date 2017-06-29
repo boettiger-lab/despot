@@ -15,5 +15,5 @@ Tested Operating Systems :
 where ```TT```, ```OO``` and ```R``` are the Transition, Observation and Reward matrices, and ```gamma``` the discount factor.
 
 ## Acknowledgements
-[Original Despot implementation](https://github.com/AdaCompNUS/despot) was made by the (M^2AP Group)[http://bigbird.comp.nus.edu.sg/m2ap/wordpress/] from the National University of Singapore
+[Original Despot implementation](https://github.com/AdaCompNUS/despot) was made by the [M<sup>2</sup>AP Group](http://bigbird.comp.nus.edu.sg/m2ap/wordpress/) from the National University of Singapore
 **Currently in alpha state, package is working but can have errors**
