@@ -17,8 +17,8 @@
 #' @examples
 #' \dontrun{ ## Takes > 5s
 #' ## Use example code to generate matrices for pomdp problem:
-#' source(system.file("examples/fisheries-ex.R", package = "sarsop"))
-#' alpha <- sarsop(transition, observation, reward, discount, precision = 10)
+#' source(system.file("examples/fisheries-ex.R", package = "despot"))
+#' alpha <- despot(transition, observation, reward, discount, precision = 10)
 #' compute_policy(alpha, transition, observation, reward)
 #' }
 #'
@@ -42,6 +42,6 @@ despot <- function(transition, observation, reward, discount,
   outfile <-  paste0(log_dir, "/", id,  ".policyx")
   stdout <-  paste0(log_dir, "/", id,  ".log")
   write_pomdpx(transition, observation, reward, discount, initial, file = infile)
-  result <- pomdpsol(infile, outfile, stdout = stdout, ...)
+  result <- solver(infile, outfile, stdout = stdout, ...)
   return(result)
 }

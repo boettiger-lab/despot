@@ -2,7 +2,7 @@
 % Please edit documentation in R/despot.R, R/solver.R
 \name{despot}
 \alias{despot}
-\alias{pomdpsol}
+\alias{solver}
 \alias{despot}
 \alias{DESPOT}
 \title{despot}
@@ -11,7 +11,7 @@ despot(transition, observation, reward, discount, state_prior = rep(1,
   dim(observation)[[1]])/dim(observation)[[1]], verbose = TRUE,
   log_dir = tempdir(), log_data = NULL, ...)
 
-pomdpsol(model, output = tempfile(), runs = 2, stdout = tempfile(),
+solver(model, output = tempfile(), runs = 2, stdout = tempfile(),
   stderr = tempfile(), timeout = NULL, simlen = NULL,
   max_policy_simlen = NULL, depth = NULL, discount = NULL)
 }
@@ -58,21 +58,21 @@ a matrix of alpha vectors. Column index indicates action associated with the alp
 despot wraps the tasks of writing the pomdpx file defining the problem, running the DESPOT algorithm in C++,
 and then reading the resulting simulation file back into R.
 
-Wrappers for the APPL executables. The \code{pomdpsol} function solves a model
+Wrappers for the DESPOT executables. The \code{solver} function solves a model
 file and returns the path to the output policy file.
 }
 \examples{
 \dontrun{ ## Takes > 5s
 ## Use example code to generate matrices for pomdp problem:
-source(system.file("examples/fisheries-ex.R", package = "sarsop"))
-alpha <- sarsop(transition, observation, reward, discount, precision = 10)
+source(system.file("examples/fisheries-ex.R", package = "despot"))
+alpha <- despot(transition, observation, reward, discount, precision = 10)
 compute_policy(alpha, transition, observation, reward)
 }
 
 \donttest{
-model <- system.file("models/example.pomdp", package = "sarsop")
+model <- system.file("models/example.pomdp", package = "despot")
 policy <- tempfile()
-pomdpsol(model, output = policy, timeout = 1)
+solver(model, output = policy, timeout = 1)
 
 # Other tools
 evaluation <- pomdpeval(model, policy, stdout = FALSE)

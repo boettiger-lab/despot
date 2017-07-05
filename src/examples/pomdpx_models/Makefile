@@ -33,7 +33,7 @@ all:
 
 install:
 	$(CXX) $(LDFLAGS) $(SOURCES) -I $(INCDIR) $(LIBDIR)/*.o -o $(BIN)
-	mkdir ../../../inst
+	rm -rf ../../../inst/bin
 	mkdir ../../../inst/bin
 	mv pomdpx ../../../inst/bin
 

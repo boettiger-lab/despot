@@ -7,9 +7,9 @@
 #' @param gamma discount factor
 #' @param b initial belief
 #' @param file pomdpx file to create
-#' @param digits precision to round to before normalizing. Leave at 4 since sarsop seems unable to do more?
+#' @param digits precision to round to before normalizing. Leave at 4 since despot seems unable to do more?
 #' @param digits2 precision to write solution to. Leave at 10, since normalizing requires additional precision
-#' @param format floating point format, because sarsop parser doesn't seem to know scientific notation
+#' @param format floating point format, because despot parser doesn't seem to know scientific notation
 #' @export
 write_pomdpx <- function(P, O, R, gamma, b = rep(1/dim(O)[1], dim(O)[1]), file = "input.pomdpx", digits = 12, digits2 = 12, format = "f"){
 
@@ -191,7 +191,7 @@ write_pomdpx <- function(P, O, R, gamma, b = rep(1/dim(O)[1], dim(O)[1]), file =
 }
 
 
-## Avoids warnings in SARSOP by rounding off precision, but can bias results. Not used.
+## Avoids warnings in despot by rounding off precision, but can bias results. Not used.
 normalize <- function(A, digits = 4){
   if(!is.null(digits)){
     A <- as.numeric(formatC(A, digits = digits, format="f"))

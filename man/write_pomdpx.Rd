@@ -20,11 +20,11 @@ write_pomdpx(P, O, R, gamma, b = rep(1/dim(O)[1], dim(O)[1]),
 
 \item{file}{pomdpx file to create}
 
-\item{digits}{precision to round to before normalizing. Leave at 4 since sarsop seems unable to do more?}
+\item{digits}{precision to round to before normalizing. Leave at 4 since despot seems unable to do more?}
 
 \item{digits2}{precision to write solution to. Leave at 10, since normalizing requires additional precision}
 
-\item{format}{floating point format, because sarsop parser doesn't seem to know scientific notation}
+\item{format}{floating point format, because despot parser doesn't seem to know scientific notation}
 }
 \description{
 write_pomdpx

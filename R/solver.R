@@ -1,6 +1,6 @@
 #' APPL wrappers
 #'
-#' Wrappers for the APPL executables. The \code{pomdpsol} function solves a model
+#' Wrappers for the DESPOT executables. The \code{solver} function solves a model
 #' file and returns the path to the output policy file.
 #'
 #' @export
@@ -17,16 +17,16 @@
 #' @param discount discount factor for the POMDP model (default from the model file)
 #' @examples
 #' \donttest{
-#' model <- system.file("models/example.pomdp", package = "sarsop")
+#' model <- system.file("models/example.pomdp", package = "despot")
 #' policy <- tempfile()
-#' pomdpsol(model, output = policy, timeout = 1)
+#' solver(model, output = policy, timeout = 1)
 #'
 #' # Other tools
 #' evaluation <- pomdpeval(model, policy, stdout = FALSE)
 #' graph <- polgraph(model, policy, stdout = FALSE)
 #' simulations <- pomdpsim(model, policy, stdout = FALSE)
 #' }
-pomdpsol <- function(model, output = tempfile(), runs=2,
+solver <- function(model, output = tempfile(), runs=2,
                      stdout = tempfile(),
                      stderr = tempfile(),
                      timeout=NULL,
@@ -47,10 +47,10 @@ pomdpsol <- function(model, output = tempfile(), runs=2,
 
   # args <- paste(args)
   print(stdout)
-  exec_program("pomdpx", args, stdout = stdout, stderr = stderr)
+  exec_program("pomdpx", args, stdout = output, stderr = stderr)
   # parse_despot_messages(readLines(stdout))
   # Read back simulation CSV into R
-  result <- read.csv(file=stdout, header=TRUE, sep=";")
+  result <- read.csv(file=output, header=TRUE, sep=";")
 
   #formatting the output
   result$State = as.integer(gsub("[a-z]", "\\", result$State))
@@ -90,7 +90,7 @@ parse_despot_messages <- function(txt){
   # load_time <- parse_key_value("loading time",txt) # in seconds
   # init_time <- parse_key_value("initialization time", txt)
   #
-  # n <- grep("SARSOP finishing", txt)
+  # n <- grep("despot finishing", txt)
   # end_condition <- txt[n+1]
   #
   # target_precision_reached <- grepl("target precision reached", end_condition)
