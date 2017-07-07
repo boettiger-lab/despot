@@ -203,7 +203,7 @@ bool Evaluator::RunStep(int step, int round) {
 			<< (step_end_t - step_start_t) << " / " << EvalLog::allocated_time
 			;
 		if (!Globals::config.silence && out_)
-			*out_ ;
+			
 		step_++;
 		return true;
 	}
@@ -529,7 +529,7 @@ void POMDPEvaluator::InitRound() {
 	// if (!Globals::config.silence && out_) {
 	// 	*out_ << "Initial state: " ;
 	// 	model_->PrintState(*state_, *out_);
-	// 	*out_ ;
+	// 	
 	// }
 
 	// Initial belief
