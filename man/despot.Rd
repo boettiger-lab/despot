@@ -26,11 +26,9 @@ solver(model, output = tempfile(), runs = 2, stdout = tempfile(),
 
 \item{state_prior}{initial belief state, optional, defaults to uniform over states}
 
-\item{verbose}{logical, should the function include a message with pomdp diagnostics (timings, final precision, end condition)}
-
 \item{log_dir}{pomdpx and simulation csv files will be saved here, along with a metadata file}
 
-\item{...}{additional arguments to \code{\link{appl}}.}
+\item{...}{additional arguments to \code{\link{despot}}.}
 
 \item{model}{file/path to the \code{pomdp} model file}
 
