@@ -9,9 +9,7 @@
 #' @param state_prior initial belief state, optional, defaults to uniform over states
 #' @param ... additional arguments to \code{\link{despot}}.
 #' @param log_dir pomdpx and simulation csv files will be saved here, along with a metadata file
-#' @return a matrix of alpha vectors. Column index indicates action associated with the alpha vector, (1:n_actions),
-#'  rows indicate system state, x. Actions for which no alpha vector was found are included as all -Inf, since such actions are
-#'  not optimal regardless of belief, and thus have no corresponding alpha vectors in alpha_action list.
+#' @return a dataFrame containing the result of the simulation
 #' @export
 #' @examples
 #' \dontrun{ ## Takes > 5s

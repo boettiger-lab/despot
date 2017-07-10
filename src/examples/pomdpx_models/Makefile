@@ -34,6 +34,7 @@ all:
 install:
 	$(CXX) $(LDFLAGS) $(SOURCES) -I $(INCDIR) $(LIBDIR)/*.o -o $(BIN)
 	rm -rf ../../../inst/bin
+	rm -rf ../../../src/examples/cpp_models
 	mkdir ../../../inst/bin
 	mv pomdpx ../../../inst/bin
 

@@ -4,16 +4,18 @@
 #' file and returns the path to the output policy file.
 #'
 #' @export
-#' @rdname despot
-#' @aliases despot DESPOT
+#' @rdname despot-solver
+#' @aliases despot-solver DESPOT-solver
 #' @param model file/path to the \code{pomdp} model file
 #' @param stdout a filename where pomdp run data will be stored
 #' @param stderr where output to 'stderr', see \code{\link{system2}}. Use \code{FALSE}
 #' to suppress output.
-#' @param timout despot search time per move, in seconds (default 1)
 #' @param simlen despot number of steps to simulate (default 90)
-#' @param max-policy-simlen number of steps to simulate the default policy (default 90)
+#' @param max_policy_simlen number of steps to simulate the default policy (default 90)
 #' @param depth maximum depth to simulate (default 90)
+#' @param output file where the simulation output will be written (default tempfile)
+#' @param timeout search time per move, in seconds (default 1)
+#' @param runs number of simulation runs (default 2)
 #' @param discount discount factor for the POMDP model (default from the model file)
 #' @examples
 #' \donttest{
