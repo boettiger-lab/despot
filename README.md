@@ -1,3 +1,4 @@
+![build](https://travis-ci.org/boettiger-lab/despot.svg?branch=master)
 # Despot
 ## Overview
 Wrapper for the DESPOT algorithm for solving online POMDP problems.
